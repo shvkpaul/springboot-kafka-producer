@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "7273276c-c619-4e01-bad6-7bc29f1ee9c7",
+		"name": "springboot-kafka-producer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create libraryevent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"libraryEventId\": 0,\n  \"libraryEventType\": \"NEW\",\n  \"book\": {\n    \"bookId\": 123,\n    \"bookName\": \"Kafka Using Spring Boot\",\n    \"bookAuthor\": \"Shouvik\"\n  }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8091/v1/libraryevent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"v1",
+						"libraryevent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update libraryevent",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"libraryEventId\": 123,\n  \"libraryEventType\": \"UPDATE\",\n  \"book\": {\n    \"bookId\": 123,\n    \"bookName\": \"Dilip\",\n    \"bookAuthor\": \"Kafka Using Spring Boot\"\n  }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8091/v1/libraryevent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"v1",
+						"libraryevent"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
